@@ -19,10 +19,10 @@
     "predev:mobile": "pnpm run clean:assets",
     "dev:mobile": "quasar dev --mode capacitor --target android",
     "prebuild": "pnpm run clean:assets",
-    "build": "run-s build:apk build:verify build:sign",
+    "build": "dotenvx run --quiet -f .env.local -- run-s build:apk build:verify build:sign",
     "build:apk": "quasar build --mode capacitor --target android",
     "build:verify": "zipalign -v 4 './dist/capacitor/android/apk/release/app-release-unsigned.apk' './dist/capacitor/android/apk/release/Soundboard.apk'",
-    "build:sign": "apksigner sign --ks './src-capacitor/android/soundboard.keystore' --ks-key-alias soundboard './dist/capacitor/android/apk/release/Soundboard.apk'",
+    "build:sign": "apksigner sign --ks './src-capacitor/android/soundboard.keystore' --ks-key-alias soundboard --ks-pass env:SOUNDBOARD_KEYSTORE_PASS --key-pass env:SOUNDBOARD_KEYSTORE_PASS './dist/capacitor/android/apk/release/Soundboard.apk'",
     "lint": "eslint -c ./eslint.config.js \"./src*/**/*.{ts,js,cjs,mjs,vue}\"",
     "lint:fix": "eslint -c ./eslint.config.js --fix \"./src*/**/*.{ts,js,cjs,mjs,vue}\"",
     "clean:assets": "quasar clean",
@@ -31,6 +31,7 @@
     "clean:hard": "rimraf -I -g \"**/pnpm-lock.yaml\" && pnpm run clean"
   },
   "dependencies": {
+    "@dotenvx/dotenvx": "^1.32.1",
     "@fontsource-variable/inter": "^5.1.1",
     "@quasar/extras": "^1.16.4",
     "@vueuse/core": "^12.3.0",

@@ -1,6 +1,11 @@
 # Soundboard
 > **_“The Greatest Soundboard”_**
 
+### Prerequisites
+- [`pnpm`](https://pnpm.io) ^9
+- [`node`](https://nodejs.org) ^20
+- `SOUNDBOARD_KEYSTORE_PASS` environment variable to be set in order for the APK to be signed during build
+
 ### :information_source: Install the dependencies
 ```bash
 pnpm install
