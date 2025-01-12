@@ -1,32 +1,34 @@
-# Soundboard (soundboard)
+# Soundboard
+> **_“The Greatest Soundboard”_**
 
-The Greatest Soundboard
-
-## Install the dependencies
+### :information_source: Install the dependencies
 ```bash
-yarn
-# or
-npm install
+pnpm install
 ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+### :information_source: Start the app in development mode
+
+- #### As a web app (runs in a web browser)
+  ```bash
+  pnpm start
+  # or 
+  pnpm dev
+  ```
+
+- #### As an Android app (opens Android Studio)
+  ```bash
+  pnpm dev:mobile
+  ```
+
+### :information_source: Run the linter
 ```bash
-quasar dev
+pnpm lint
 ```
 
-
-### Lint the files
+### :information_source: Build the app for production (includes signing the APK)
 ```bash
-yarn lint
-# or
-npm run lint
+pnpm build
 ```
 
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+### :information_source: Customize the configuration
+See [_Configuring quasar.config file_](https://quasar.dev/quasar-cli-vite/quasar-config-file) on the [Quasar website](https://quasar.dev).
