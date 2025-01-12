@@ -1,1 +1,56 @@
-/* app global css */
+/**
+ * App's CSS entry point
+ */
+
+@import url('@fontsource-variable/inter');
+@import url('@fontsource-variable/inter/wght-italic.css');
+
+:root {
+  --color-light: #edeef0;
+  --color-muted: #b0b4ba;
+}
+
+* {
+  user-select: none;
+  text-wrap: balance;
+}
+
+html,
+body,
+body.body--dark {
+  font-family: 'Inter Variable', Roboto, sans-serif;
+  color: var(--color-light);
+}
+
+blockquote {
+  border-left: 6px solid var(--q-secondary);
+
+  margin: 0;
+  padding: 10px 6px;
+  border-radius: 0;
+
+  & > p {
+    margin: 0;
+    padding: 0;
+
+    &::before {
+      content: '\201C';
+    }
+
+    &::after {
+      content: '\201D';
+    }
+  }
+}
+
+.text-light {
+  color: var(--color-light) !important;
+}
+
+.bg-light {
+  background: var(--color-light) !important;
+}
+
+.text-muted {
+  color: var(--color-muted) !important;
+}

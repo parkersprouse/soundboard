@@ -1,0 +1,16 @@
+{
+  "appId": "me.parkersprouse.soundboard",
+  "appName": "Soundboard",
+  "backgroundColor": "#111113",
+  "webDir": "public",
+  "zoomEnabled": false,
+  "android": {
+    "backgroundColor": "#111113",
+    "initialFocus": true,
+    "keystorePath": "./android/soundboard.keystore",
+    "keystorePassword": "4hX^E%fqEu9UE$VxEtsJntBfwm8YKJ7*",
+    "keystoreAlias": "soundboard",
+    "keystoreAliasPassword": "4hX^E%fqEu9UE$VxEtsJntBfwm8YKJ7*",
+    "zoomEnabled": false
+  }
+}

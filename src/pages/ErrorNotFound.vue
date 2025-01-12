@@ -1,27 +1,70 @@
 <template>
-  <div class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center">
-    <div>
-      <div style="font-size: 30vh">
-        404
-      </div>
+  <q-layout view='lhr lpR lfr'>
+    <q-page-container>
+      <q-page class='fullscreen text-center q-pa-md flex column flex-center'>
+        <h3
+          id='error-title'
+          ref='error_title'
+          class='text-negative flex flex-center'
+        >
+          <q-icon
+            :name='evaCloseCircleOutline'
+          />
+          Page Not Found
+        </h3>
 
-      <div class="text-h2" style="opacity:.4">
-        Oops. Nothing here...
-      </div>
-
-      <q-btn
-        class="q-mt-xl"
-        color="white"
-        text-color="blue"
-        unelevated
-        to="/"
-        label="Go Home"
-        no-caps
-      />
-    </div>
-  </div>
+        <q-btn
+          class='text-muted'
+          color='secondary'
+          flat
+          no-caps
+          padding='xs'
+          size='lg'
+          to='/'
+        >
+          <q-icon :name='evaChevronLeft' />
+          <span class='q-pr-sm'>
+            Back
+          </span>
+        </q-btn>
+      </q-page>
+    </q-page-container>
+  </q-layout>
 </template>
 
-<script setup lang="ts">
-//
+<script setup lang='ts'>
+import { App } from '@capacitor/app';
+import { evaCloseCircleOutline, evaChevronLeft } from '@quasar/extras/eva-icons';
+import { get, templateRef } from '@vueuse/core';
+import { onMounted } from 'vue';
+import { useRouter } from 'vue-router';
+
+
+/*-- Injections / Utilities --*/
+
+const $router = useRouter();
+
+
+/*-- Data --*/
+
+const error_title = templateRef<HTMLElement>('error_title');
+
+
+/*-- Component Lifecycle --*/
+
+onMounted(() => {
+  App.addListener('backButton', () => {
+    $router.replace('/');
+  });
+
+  const offset = document.body.offsetWidth;
+  get(error_title).style.fontSize = `${offset * 0.65}%`;
+});
 </script>
+
+<style scoped>
+#error-title {
+  font-size: 400%;
+  gap: 0.25em;
+}
+</style>

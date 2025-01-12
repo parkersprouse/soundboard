@@ -1,102 +1,104 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-
-        <q-toolbar-title>
-          Quasar App
+  <q-layout view='hHh lpR fFf'>
+    <q-header
+      id='app-header'
+      class='bg-dark text-light'
+    >
+      <q-toolbar class='text-center'>
+        <q-toolbar-title v-if='$APP_TAGLINE'>
+          {{ $APP_TAGLINE }}
         </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in linksList"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
 
     <q-page-container>
       <router-view />
     </q-page-container>
   </q-layout>
+
+  <q-dialog
+    v-model='exit_dialog_open'
+    backdrop-filter='blur(6px)'
+  >
+    <q-card class='no-shadow'>
+      <q-card-section class='row items-center'>
+        <q-avatar
+          class='text-muted'
+          :icon='evaAlertCircleOutline'
+        />
+        <span>Are you sure you want to quit?</span>
+      </q-card-section>
+
+      <q-card-actions align='right'>
+        <q-btn
+          v-close-popup
+          aria-label='No'
+          flat
+          padding='0.25em 1em'
+          label='No'
+        />
+        <q-btn
+          aria-label='Yes'
+          color='negative'
+          outline
+          label='Yes'
+          padding='0.25em 1em'
+          @click='exitApp'
+        />
+      </q-card-actions>
+    </q-card>
+  </q-dialog>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue';
-import EssentialLink, { type EssentialLinkProps } from 'components/EssentialLink.vue';
+<script setup lang='ts'>
+import { App } from '@capacitor/app';
+import { evaAlertCircleOutline } from '@quasar/extras/eva-icons';
+import { set } from '@vueuse/core';
+import { inject, onMounted, ref } from 'vue';
 
-const linksList: EssentialLinkProps[] = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-];
 
-const leftDrawerOpen = ref(false);
+/*-- Injections / Utilities --*/
 
-function toggleLeftDrawer () {
-  leftDrawerOpen.value = !leftDrawerOpen.value;
+const $APP_TAGLINE = inject('$APP_TAGLINE');
+
+
+/*-- Data --*/
+
+const exit_dialog_open = ref(false);
+
+
+/*-- Methods --*/
+
+function exitApp() {
+  App.exitApp();
 }
+
+function showConfirmExit() {
+  set(exit_dialog_open, true);
+}
+
+
+/*-- Component Lifecycle --*/
+
+onMounted(() => {
+  App.addListener('backButton', showConfirmExit);
+});
 </script>
+
+<style>
+#app-header {
+  &.q-header {
+    border-color: rgba(255, 255, 255, 0.1);
+    border-style: solid;
+    border-width: 1px 0;
+
+    & .q-toolbar {
+      gap: 0.5rem;
+
+      & .q-toolbar__title {
+        padding: 0;
+      }
+    }
+  }
+}
+</style>
