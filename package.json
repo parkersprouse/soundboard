@@ -4,6 +4,7 @@
   "description": "The Greatest Soundboard",
   "productName": "Soundboard",
   "author": "Parker Sprouse <parker@parkersprouse.me>",
+  "license": "ISC",
   "type": "module",
   "private": true,
   "engines": {
