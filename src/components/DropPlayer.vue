@@ -79,7 +79,7 @@ function resetAudio(): void {
   set(playing, false);
 }
 
-function handleError(id: number, error: unknown): void {
+function handleError(_id: number, error: unknown): void {
   resetAudio();
   $q.notify({
     color: 'negative',

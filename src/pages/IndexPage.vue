@@ -14,8 +14,9 @@
 </template>
 
 <script setup lang='ts'>
-import DropPlayer from 'src/components/DropPlayer.vue';
 import { ref } from 'vue';
+
+import DropPlayer from 'src/components/DropPlayer.vue';
 
 import democracy_1 from 'assets/drops/democracy.webm';
 import democracy_2 from 'assets/drops/democracy.mp3';

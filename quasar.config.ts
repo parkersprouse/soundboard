@@ -1,5 +1,6 @@
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file
 import { defineConfig } from '#q-app/wrappers';
+import { evaClose } from '@quasar/extras/eva-icons';
 
 import { APP_NAME, APP_TAGLINE } from './src/constants.ts';
 
@@ -89,6 +90,9 @@ export default defineConfig((/* ctx */) => {
           negative: '#b54548',
           info: '#0061ae',
           warning: '#d36100',
+
+          light: '#edeef0',
+          muted: '#b0b4ba',
         },
         capacitor: {
           // let Quasar exit the app on mobile back button trigger
@@ -97,9 +101,16 @@ export default defineConfig((/* ctx */) => {
           backButton: false,
         },
         dark: true,
-        // for debugging the prod build
         notify: {
-          closeBtn: true,
+          actions: [
+            {
+              flat: true,
+              icon: evaClose,
+              padding: '2px',
+              square: true,
+              textColor: 'light',
+            },
+          ],
           color: 'secondary',
           position: 'bottom',
           timeout: 0,
@@ -114,8 +125,8 @@ export default defineConfig((/* ctx */) => {
       plugins: [
         'Notify', // for debugging the prod build
         /*
-         - https://github.com/capacitor-community/native-audio
-         - https://capawesome.io/plugins/app-shortcuts/
+         - --||https://github.com/capacitor-community/native-audio||--
+         - --||https://capawesome.io/plugins/app-shortcuts/||--
          - https://capawesome.io/plugins/live-update/
          - https://quasar.dev/options/screen-plugin
          */
