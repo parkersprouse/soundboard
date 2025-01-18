@@ -27,8 +27,8 @@ importers:
         specifier: ^2.3.0
         version: 2.3.0(typescript@5.5.4)(vue@3.5.13(typescript@5.5.4))
       quasar:
-        specifier: ^2.17.6
-        version: 2.17.6
+        specifier: ^2.17.7
+        version: 2.17.7
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.5.4)
@@ -40,8 +40,8 @@ importers:
         specifier: ^9.18.0
         version: 9.18.0
       '@quasar/app-vite':
-        specifier: ^2.0.6
-        version: 2.0.7(@types/node@20.17.14)(eslint@9.18.0)(lightningcss@1.29.1)(pinia@2.3.0(typescript@5.5.4)(vue@3.5.13(typescript@5.5.4)))(quasar@2.17.6)(rollup@4.30.1)(terser@5.37.0)(typescript@5.5.4)(vue-router@4.5.0(vue@3.5.13(typescript@5.5.4)))(vue@3.5.13(typescript@5.5.4))
+        specifier: ^2.0.8
+        version: 2.0.8(@types/node@20.17.14)(eslint@9.18.0)(lightningcss@1.29.1)(pinia@2.3.0(typescript@5.5.4)(vue@3.5.13(typescript@5.5.4)))(quasar@2.17.7)(rollup@4.30.1)(terser@5.37.0)(typescript@5.5.4)(vue-router@4.5.0(vue@3.5.13(typescript@5.5.4)))(vue@3.5.13(typescript@5.5.4))
       '@quasar/icongenie':
         specifier: ^4.0.0
         version: 4.0.0
@@ -55,7 +55,7 @@ importers:
         specifier: ^20.5.9
         version: 20.17.14
       '@vue/eslint-config-typescript':
-        specifier: ^14.2.0
+        specifier: ^14.3.0
         version: 14.3.0(eslint-plugin-vue@9.32.0(eslint@9.18.0))(eslint@9.18.0)(typescript@5.5.4)
       autoprefixer:
         specifier: ^10.4.20
@@ -631,16 +631,16 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==, tarball: https://registry.npmjs.org/@jridgewell/trace-mapping/-/trace-mapping-0.3.25.tgz}
 
-  '@noble/ciphers@1.2.0':
-    resolution: {integrity: sha512-YGdEUzYEd+82jeaVbSKKVp1jFZb8LwaNMIIzHFkihGvYdd/KKAr7KaJHdEdSYGredE3ssSravXIa0Jxg28Sv5w==, tarball: https://registry.npmjs.org/@noble/ciphers/-/ciphers-1.2.0.tgz}
+  '@noble/ciphers@1.2.1':
+    resolution: {integrity: sha512-rONPWMC7PeExE077uLE4oqWrZ1IvAfz3oH9LibVAcVCopJiA9R62uavnbEzdkVmJYI6M6Zgkbeb07+tWjlq2XA==, tarball: https://registry.npmjs.org/@noble/ciphers/-/ciphers-1.2.1.tgz}
     engines: {node: ^14.21.3 || >=16}
 
-  '@noble/curves@1.8.0':
-    resolution: {integrity: sha512-j84kjAbzEnQHaSIhRPUmB3/eVXu2k3dKPl2LOrR8fSOIL+89U+7lV117EWHtq/GHM3ReGHM46iRBdZfpc4HRUQ==, tarball: https://registry.npmjs.org/@noble/curves/-/curves-1.8.0.tgz}
+  '@noble/curves@1.8.1':
+    resolution: {integrity: sha512-warwspo+UYUPep0Q+vtdVB4Ugn8GGQj8iyB3gnRWsztmUHTI3S1nhdiWNsPUGL0vud7JlRRk1XEu7Lq1KGTnMQ==, tarball: https://registry.npmjs.org/@noble/curves/-/curves-1.8.1.tgz}
     engines: {node: ^14.21.3 || >=16}
 
-  '@noble/hashes@1.7.0':
-    resolution: {integrity: sha512-HXydb0DgzTpDPwbVeDGCG1gIu7X6+AuU6Zl6av/E/KG8LMsvPntvq+w17CHRpKBmN6Ybdrt1eP3k4cj8DJa78w==, tarball: https://registry.npmjs.org/@noble/hashes/-/hashes-1.7.0.tgz}
+  '@noble/hashes@1.7.1':
+    resolution: {integrity: sha512-B8XBPsn4vT/KJAGqDzbwztd+6Yte3P4V7iafm24bxgDe/mlRuK6xmWPuCNrKt2vDafZ8MfJLlchDG/vYafQEjQ==, tarball: https://registry.npmjs.org/@noble/hashes/-/hashes-1.7.1.tgz}
     engines: {node: ^14.21.3 || >=16}
 
   '@nodelib/fs.scandir@2.1.5':
@@ -671,8 +671,8 @@ packages:
     resolution: {integrity: sha512-c83qWb22rNRuB0UaVCI0uRPNRr8Z0FWnEIvT47jiHAmOIUHbBOg5XvV7pM5x+rKn9HRpjxquDbXYSXr3fAKFcw==, tarball: https://registry.npmjs.org/@pnpm/npm-conf/-/npm-conf-2.3.1.tgz}
     engines: {node: '>=12'}
 
-  '@quasar/app-vite@2.0.7':
-    resolution: {integrity: sha512-93ZRVOLrhEvvo7BqNpYBqNWEu4YbDG/A9+Qy2NQiwXPRLHm1rsFlhE2UiU2WtbKMazOsmoeWqQvp/OAdcg4qfA==, tarball: https://registry.npmjs.org/@quasar/app-vite/-/app-vite-2.0.7.tgz}
+  '@quasar/app-vite@2.0.8':
+    resolution: {integrity: sha512-E2l5vV0Fi955U2Uz+iSAeVaJzsA0x5GY9ZMU6irIJWep39O/zpFGcyGz9uXjBEBkOX002id1P5HoGnh4Tm4alQ==, tarball: https://registry.npmjs.org/@quasar/app-vite/-/app-vite-2.0.8.tgz}
     engines: {node: ^30 || ^28 || ^26 || ^24 || ^22 || ^20 || ^18, npm: '>= 6.14.12', yarn: '>= 1.17.3'}
     hasBin: true
     peerDependencies:
@@ -1435,6 +1435,9 @@ packages:
 
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==, tarball: https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz}
+
+  confbox@0.1.8:
+    resolution: {integrity: sha512-RMtmw0iFkeR4YV+fUOSucriAQNb9g8zFR52MWCtl+cCZOFRNL6zeB395vPzFhEjjn4fMxXudmELnl/KF/WrK6w==, tarball: https://registry.npmjs.org/confbox/-/confbox-0.1.8.tgz}
 
   config-chain@1.1.13:
     resolution: {integrity: sha512-qj+f8APARXHrM0hraqXYb2/bOVSV4PvJQlNZ/DVj0QrmNM2q2euizkeuVckQ57J+W0mRH6Hvi+k50M4Jul2VRQ==, tarball: https://registry.npmjs.org/config-chain/-/config-chain-1.1.13.tgz}
@@ -3079,8 +3082,8 @@ packages:
     resolution: {integrity: sha512-+38qI9SOr8tfZ4QmJNplMUxqjbe7LKvvZgWdExBOmd+egZTtjLB67Gu0HRX3u/XOq7UU2Nx6nsjvS16Z9uwfpg==, tarball: https://registry.npmjs.org/qs/-/qs-6.13.0.tgz}
     engines: {node: '>=0.6'}
 
-  quasar@2.17.6:
-    resolution: {integrity: sha512-SdAGWbLOkUr/CXTu10UEeV5a06fhfRSpMWo2nAm48wZkyIyxWiK2Af8tKa2BZbYFpSoS2l9atnyFTiukHgoe5Q==, tarball: https://registry.npmjs.org/quasar/-/quasar-2.17.6.tgz}
+  quasar@2.17.7:
+    resolution: {integrity: sha512-nPJdHoONlcW7WEU2Ody907Wx945Zfyuea/KP4LBaEn5AcL95PUWp8Gz/0zDYNnFw0aCWRtye3SUAdQl5tmrn5w==, tarball: https://registry.npmjs.org/quasar/-/quasar-2.17.7.tgz}
     engines: {node: '>= 10.18.1', npm: '>= 6.13.4', yarn: '>= 1.21.1'}
 
   query-string@5.1.1:
@@ -4143,9 +4146,9 @@ snapshots:
       picomatch: 4.0.2
       which: 4.0.0
 
-  '@ecies/ciphers@0.2.2(@noble/ciphers@1.2.0)':
+  '@ecies/ciphers@0.2.2(@noble/ciphers@1.2.1)':
     dependencies:
-      '@noble/ciphers': 1.2.0
+      '@noble/ciphers': 1.2.1
 
   '@esbuild/aix-ppc64@0.24.2':
     optional: true
@@ -4682,13 +4685,13 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@noble/ciphers@1.2.0': {}
+  '@noble/ciphers@1.2.1': {}
 
-  '@noble/curves@1.8.0':
+  '@noble/curves@1.8.1':
     dependencies:
-      '@noble/hashes': 1.7.0
+      '@noble/hashes': 1.7.1
 
-  '@noble/hashes@1.7.0': {}
+  '@noble/hashes@1.7.1': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -4717,11 +4720,11 @@ snapshots:
       '@pnpm/network.ca-file': 1.0.2
       config-chain: 1.1.13
 
-  '@quasar/app-vite@2.0.7(@types/node@20.17.14)(eslint@9.18.0)(lightningcss@1.29.1)(pinia@2.3.0(typescript@5.5.4)(vue@3.5.13(typescript@5.5.4)))(quasar@2.17.6)(rollup@4.30.1)(terser@5.37.0)(typescript@5.5.4)(vue-router@4.5.0(vue@3.5.13(typescript@5.5.4)))(vue@3.5.13(typescript@5.5.4))':
+  '@quasar/app-vite@2.0.8(@types/node@20.17.14)(eslint@9.18.0)(lightningcss@1.29.1)(pinia@2.3.0(typescript@5.5.4)(vue@3.5.13(typescript@5.5.4)))(quasar@2.17.7)(rollup@4.30.1)(terser@5.37.0)(typescript@5.5.4)(vue-router@4.5.0(vue@3.5.13(typescript@5.5.4)))(vue@3.5.13(typescript@5.5.4))':
     dependencies:
       '@quasar/render-ssr-error': 1.0.3
       '@quasar/ssl-certificate': 1.0.0
-      '@quasar/vite-plugin': 1.9.0(@vitejs/plugin-vue@5.2.1(vite@6.0.7(@types/node@20.17.14)(lightningcss@1.29.1)(sass-embedded@1.83.4)(terser@5.37.0))(vue@3.5.13(typescript@5.5.4)))(quasar@2.17.6)(vite@6.0.7(@types/node@20.17.14)(lightningcss@1.29.1)(sass-embedded@1.83.4)(terser@5.37.0))(vue@3.5.13(typescript@5.5.4))
+      '@quasar/vite-plugin': 1.9.0(@vitejs/plugin-vue@5.2.1(vite@6.0.7(@types/node@20.17.14)(lightningcss@1.29.1)(sass-embedded@1.83.4)(terser@5.37.0))(vue@3.5.13(typescript@5.5.4)))(quasar@2.17.7)(vite@6.0.7(@types/node@20.17.14)(lightningcss@1.29.1)(sass-embedded@1.83.4)(terser@5.37.0))(vue@3.5.13(typescript@5.5.4))
       '@types/chrome': 0.0.262
       '@types/compression': 1.7.5
       '@types/cordova': 11.0.3
@@ -4731,6 +4734,7 @@ snapshots:
       chokidar: 3.6.0
       ci-info: 4.1.0
       compression: 1.7.5
+      confbox: 0.1.8
       cross-spawn: 7.0.6
       dot-prop: 9.0.0
       dotenv: 16.4.7
@@ -4746,7 +4750,7 @@ snapshots:
       lodash: 4.17.21
       minimist: 1.2.8
       open: 10.1.0
-      quasar: 2.17.6
+      quasar: 2.17.7
       rollup-plugin-visualizer: 5.14.0(rollup@4.30.1)
       sass-embedded: 1.83.4
       semver: 7.6.3
@@ -4810,10 +4814,10 @@ snapshots:
       fs-extra: 11.3.0
       selfsigned: 2.4.1
 
-  '@quasar/vite-plugin@1.9.0(@vitejs/plugin-vue@5.2.1(vite@6.0.7(@types/node@20.17.14)(lightningcss@1.29.1)(sass-embedded@1.83.4)(terser@5.37.0))(vue@3.5.13(typescript@5.5.4)))(quasar@2.17.6)(vite@6.0.7(@types/node@20.17.14)(lightningcss@1.29.1)(sass-embedded@1.83.4)(terser@5.37.0))(vue@3.5.13(typescript@5.5.4))':
+  '@quasar/vite-plugin@1.9.0(@vitejs/plugin-vue@5.2.1(vite@6.0.7(@types/node@20.17.14)(lightningcss@1.29.1)(sass-embedded@1.83.4)(terser@5.37.0))(vue@3.5.13(typescript@5.5.4)))(quasar@2.17.7)(vite@6.0.7(@types/node@20.17.14)(lightningcss@1.29.1)(sass-embedded@1.83.4)(terser@5.37.0))(vue@3.5.13(typescript@5.5.4))':
     dependencies:
       '@vitejs/plugin-vue': 5.2.1(vite@6.0.7(@types/node@20.17.14)(lightningcss@1.29.1)(sass-embedded@1.83.4)(terser@5.37.0))(vue@3.5.13(typescript@5.5.4))
-      quasar: 2.17.6
+      quasar: 2.17.7
       vite: 6.0.7(@types/node@20.17.14)(lightningcss@1.29.1)(sass-embedded@1.83.4)(terser@5.37.0)
       vue: 3.5.13(typescript@5.5.4)
 
@@ -5618,6 +5622,8 @@ snapshots:
 
   concat-map@0.0.1: {}
 
+  confbox@0.1.8: {}
+
   config-chain@1.1.13:
     dependencies:
       ini: 1.3.8
@@ -5862,10 +5868,10 @@ snapshots:
 
   eciesjs@0.4.13:
     dependencies:
-      '@ecies/ciphers': 0.2.2(@noble/ciphers@1.2.0)
-      '@noble/ciphers': 1.2.0
-      '@noble/curves': 1.8.0
-      '@noble/hashes': 1.7.0
+      '@ecies/ciphers': 0.2.2(@noble/ciphers@1.2.1)
+      '@noble/ciphers': 1.2.1
+      '@noble/curves': 1.8.1
+      '@noble/hashes': 1.7.1
 
   ee-first@1.1.1: {}
 
@@ -7287,7 +7293,7 @@ snapshots:
     dependencies:
       side-channel: 1.1.0
 
-  quasar@2.17.6: {}
+  quasar@2.17.7: {}
 
   query-string@5.1.1:
     dependencies:

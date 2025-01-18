@@ -1,13 +1,13 @@
 <template>
   <q-layout view='lhr lpR lfr'>
     <q-page-container>
-      <q-page class='fullscreen text-center q-pa-md flex column flex-center'>
+      <q-page class='fullscreen text-center q-pa-md flex column flex-center no-wrap'>
         <h3
           id='error-title'
           ref='error_title'
           class='text-negative flex flex-center'
         >
-          <q-icon :name='ionCloseCircleOutline' />
+          <q-icon :name='mdiCloseOctagon' />
           Page Not Found
         </h3>
 
@@ -20,8 +20,8 @@
           size='lg'
           to='/'
         >
-          <q-icon :name='ionChevronBackOutline' />
-          <span class='q-pl-xs'>
+          <q-icon :name='mdiChevronLeft' />
+          <span class='q-pr-sm'>
             Back
           </span>
         </q-btn>
@@ -32,7 +32,7 @@
 
 <script setup lang='ts'>
 import { App } from '@capacitor/app';
-import { ionCloseCircleOutline, ionChevronBackOutline } from '@quasar/extras/ionicons-v7';
+import { mdiCloseOctagon, mdiChevronLeft } from '@quasar/extras/mdi-v7';
 import { get, templateRef } from '@vueuse/core';
 import { onMounted } from 'vue';
 import { useRouter } from 'vue-router';

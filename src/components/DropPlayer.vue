@@ -1,12 +1,13 @@
 <template>
   <q-item
     class='bg-dark drop-list__item'
+    :class='{ "drop-list__item--playing": playing }'
     clickable
     @click='onClick'
   >
     <q-item-section avatar>
       <q-icon
-        :name='playing ? ionStopCircle : ionPlayCircleOutline'
+        :name='playing ? mdiStopCircleOutline : mdiPlayCircleOutline'
         size='4rem'
         class='text-primary'
       />
@@ -19,7 +20,7 @@
 </template>
 
 <script setup lang='ts'>
-import { ionPlayCircleOutline, ionStopCircle } from '@quasar/extras/ionicons-v7';
+import { mdiPlayCircleOutline, mdiStopCircleOutline } from '@quasar/extras/mdi-v7';
 import { get, set } from '@vueuse/core';
 import { Howl } from 'howler';
 import { useQuasar } from 'quasar';
@@ -114,5 +115,10 @@ onUnmounted(() => {
 .drop-list__item {
   border: 1px solid #ffffff47;
   border-radius: 4px;
+
+  &.drop-list__item--playing {
+    border-color: var(--q-primary) !important;
+    background: var(--q-transparent-primary) !important;
+  }
 }
 </style>

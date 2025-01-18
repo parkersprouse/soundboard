@@ -24,7 +24,7 @@
       <q-card-section class='row items-center'>
         <q-avatar
           class='text-negative'
-          :icon='ionAlertCircleOutline'
+          :icon='mdiAlertCircleOutline'
         />
         <span>Are you sure you want to quit?</span>
       </q-card-section>
@@ -52,7 +52,7 @@
 
 <script setup lang='ts'>
 import { App } from '@capacitor/app';
-import { ionAlertCircleOutline } from '@quasar/extras/ionicons-v7';
+import { mdiAlertCircleOutline } from '@quasar/extras/mdi-v7';
 import { set } from '@vueuse/core';
 import { inject, onMounted, ref } from 'vue';
 

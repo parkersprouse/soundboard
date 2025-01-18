@@ -1,6 +1,6 @@
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file
 import { defineConfig } from '#q-app/wrappers';
-import { ionCloseOutline } from '@quasar/extras/ionicons-v7';
+import { mdiClose } from '@quasar/extras/mdi-v7';
 
 import { APP_NAME, APP_TAGLINE } from './src/constants.ts';
 
@@ -72,6 +72,10 @@ export default defineConfig((/* ctx */) => {
       open: false,
     },
 
+    extras: [
+      'mdi-v7',
+    ],
+
     framework: {
       config: {
         brand: {
@@ -89,6 +93,8 @@ export default defineConfig((/* ctx */) => {
 
           light: '#edeef0',
           muted: '#b0b4ba',
+
+          'transparent-primary': '#7b4c9e22',
         },
         capacitor: {
           // let Quasar exit the app on mobile back button trigger
@@ -101,7 +107,7 @@ export default defineConfig((/* ctx */) => {
           actions: [
             {
               flat: true,
-              icon: ionCloseOutline,
+              icon: mdiClose,
               padding: '2px',
               square: true,
               textColor: 'light',
@@ -116,6 +122,7 @@ export default defineConfig((/* ctx */) => {
           bodyClasses: true,
         },
       },
+      iconSet: 'svg-mdi-v7',
       lang: 'en-US',
       plugins: [
         'Notify',
