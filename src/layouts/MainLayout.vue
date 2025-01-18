@@ -23,8 +23,8 @@
     <q-card class='no-shadow'>
       <q-card-section class='row items-center'>
         <q-avatar
-          class='text-muted'
-          :icon='evaAlertCircleOutline'
+          class='text-negative'
+          :icon='ionAlertCircleOutline'
         />
         <span>Are you sure you want to quit?</span>
       </q-card-section>
@@ -40,7 +40,7 @@
         <q-btn
           aria-label='Yes'
           color='negative'
-          outline
+          flat
           label='Yes'
           padding='0.25em 1em'
           @click='exitApp'
@@ -52,7 +52,7 @@
 
 <script setup lang='ts'>
 import { App } from '@capacitor/app';
-import { evaAlertCircleOutline } from '@quasar/extras/eva-icons';
+import { ionAlertCircleOutline } from '@quasar/extras/ionicons-v7';
 import { set } from '@vueuse/core';
 import { inject, onMounted, ref } from 'vue';
 

@@ -54,3 +54,10 @@ blockquote {
 .text-muted {
   color: var(--color-muted) !important;
 }
+
+.q-btn {
+  & .q-icon,
+  & .q-spinner {
+    font-size: 1.15em;
+  }
+}

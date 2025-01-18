@@ -1,6 +1,6 @@
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file
 import { defineConfig } from '#q-app/wrappers';
-import { evaClose } from '@quasar/extras/eva-icons';
+import { ionCloseOutline } from '@quasar/extras/ionicons-v7';
 
 import { APP_NAME, APP_TAGLINE } from './src/constants.ts';
 
@@ -72,16 +72,12 @@ export default defineConfig((/* ctx */) => {
       open: false,
     },
 
-    extras: [
-      'eva-icons',
-    ],
-
     framework: {
       config: {
         brand: {
-          primary: '#0078a7',
+          primary: '#7b4c9e',
           secondary: '#272a2d',
-          accent: '#7b4c9e',
+          accent: '#0078a7',
 
           dark: '#18191b',
           'dark-page': '#111113',
@@ -105,7 +101,7 @@ export default defineConfig((/* ctx */) => {
           actions: [
             {
               flat: true,
-              icon: evaClose,
+              icon: ionCloseOutline,
               padding: '2px',
               square: true,
               textColor: 'light',
@@ -120,14 +116,13 @@ export default defineConfig((/* ctx */) => {
           bodyClasses: true,
         },
       },
-      iconSet: 'eva-icons',
       lang: 'en-US',
       plugins: [
-        'Notify', // for debugging the prod build
+        'Notify',
         /*
          - --||https://github.com/capacitor-community/native-audio||--
          - --||https://capawesome.io/plugins/app-shortcuts/||--
-         - https://capawesome.io/plugins/live-update/
+         - --||https://capawesome.io/plugins/live-update/||--
          - https://quasar.dev/options/screen-plugin
          */
       ],

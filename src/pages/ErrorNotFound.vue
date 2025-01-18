@@ -7,9 +7,7 @@
           ref='error_title'
           class='text-negative flex flex-center'
         >
-          <q-icon
-            :name='evaCloseCircleOutline'
-          />
+          <q-icon :name='ionCloseCircleOutline' />
           Page Not Found
         </h3>
 
@@ -22,8 +20,8 @@
           size='lg'
           to='/'
         >
-          <q-icon :name='evaChevronLeft' />
-          <span class='q-pr-sm'>
+          <q-icon :name='ionChevronBackOutline' />
+          <span class='q-pl-xs'>
             Back
           </span>
         </q-btn>
@@ -34,7 +32,7 @@
 
 <script setup lang='ts'>
 import { App } from '@capacitor/app';
-import { evaCloseCircleOutline, evaChevronLeft } from '@quasar/extras/eva-icons';
+import { ionCloseCircleOutline, ionChevronBackOutline } from '@quasar/extras/ionicons-v7';
 import { get, templateRef } from '@vueuse/core';
 import { onMounted } from 'vue';
 import { useRouter } from 'vue-router';

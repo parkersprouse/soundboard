@@ -6,7 +6,7 @@
   >
     <q-item-section avatar>
       <q-icon
-        :name='playing ? evaStopCircle : evaPlayCircleOutline'
+        :name='playing ? ionStopCircle : ionPlayCircleOutline'
         size='4rem'
         class='text-primary'
       />
@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang='ts'>
-import { evaPlayCircleOutline, evaStopCircle } from '@quasar/extras/eva-icons';
+import { ionPlayCircleOutline, ionStopCircle } from '@quasar/extras/ionicons-v7';
 import { get, set } from '@vueuse/core';
 import { Howl } from 'howler';
 import { useQuasar } from 'quasar';
