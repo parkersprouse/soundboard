@@ -1,2 +1,7 @@
 packages:
   - src*
+onlyBuiltDependencies:
+  - esbuild
+  - pngquant-bin
+  - sharp
+  - vue-demi

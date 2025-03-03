@@ -36,6 +36,8 @@ export default defineConfig((/* ctx */) => {
         extendTsConfig(config) {
           config.compilerOptions ??= {};
           config.compilerOptions.allowImportingTsExtensions = true;
+          config.compilerOptions.paths.types = ['./../src/types'];
+          config.compilerOptions.paths['types/*'] = ['./../src/types/*'];
         },
         strict: true,
         vueShim: true,

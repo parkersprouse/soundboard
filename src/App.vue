@@ -6,7 +6,7 @@
 import { App } from '@capacitor/app';
 import { inject, onMounted } from 'vue';
 
-import type { DropEventBus } from 'src/types/drop_event_bus.d.ts';
+import type { DropEventBus } from 'types/drop_event_bus.d.ts';
 
 
 /*-- Injections / Utilities --*/

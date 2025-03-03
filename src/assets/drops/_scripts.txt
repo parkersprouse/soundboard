@@ -1,4 +1,8 @@
-yt-dlp --console-title --progress --no-cache-dir --no-keep-fragments --no-mark-watched --no-overwrites --cookies-from-browser firefox --restrict-filenames --windows-filenames --progress --extractor-args 'youtube:max_comments=0,0,0,0;skip=translated_subs' -f 'ba' --paths 'tmp:/tmp' --paths "home:${PWD}" --output 'audio.%(ext)s' <url>
+These are the CLI scripts used to download the audio off of YouTube, trim it down to the appropriate length, and convert it to an `.mp3` file for portability.
+
+-----------------------------------------------------------------
+
+yt-dlp --console-title --progress --no-cache-dir --no-keep-fragments --no-mark-watched --no-overwrites --cookies-from-browser firefox --restrict-filenames --windows-filenames --progress --extractor-args 'youtube:max_comments=0,0,0,0;skip=translated_subs' -f 'ba' --paths 'tmp:/tmp' --paths "home:${PWD}" --output '<filename>.%(ext)s' <url>
 
 rm -f <output> && ffmpeg -ss <start timestamp> -i <input> -to <duration from start timestamp> -b:a <input bitrate> <output>
 

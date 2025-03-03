@@ -13,8 +13,8 @@
       />
     </q-item-section>
 
-    <q-item-section>
-      &ldquo;{{ drop.label }}&rdquo;
+    <q-item-section class='drop-list__item-text'>
+      {{ drop.label }}
     </q-item-section>
   </q-item>
 </template>
@@ -26,8 +26,9 @@ import { Howl } from 'howler';
 import { useQuasar } from 'quasar';
 import { inject, onMounted, onUnmounted, ref } from 'vue';
 
-import type { Drop } from 'src/types/drop.js';
-import type { DropEventBus } from 'src/types/drop_event_bus.js';
+import type { HowlCallback, HowlErrorCallback } from 'howler';
+import type { Drop } from 'types/drop.js';
+import type { DropEventBus } from 'types/drop_event_bus.js';
 
 
 /*-- Props --*/
@@ -56,6 +57,7 @@ const audio = new Howl({
   src: [...drop.files],
   volume: 1,
 });
+
 const playing = ref<boolean>(false);
 
 
@@ -65,14 +67,14 @@ function onClick(): void {
   if (get(playing)) resetAudio();
   else {
     audio.play();
-    $bus.emit('drop_started', drop.label);
+    $bus.emit('drop_started', drop.id);
   }
 }
 
 /* Audio Event Listeners */
 
-function onDropStarted(label: string): void {
-  if (label !== drop.label) resetAudio();
+function onDropStarted(id: string): void {
+  if (id !== drop.id) resetAudio();
 }
 
 function resetAudio(): void {
@@ -82,9 +84,15 @@ function resetAudio(): void {
 
 function handleError(_id: number, error: unknown): void {
   resetAudio();
+
+  let err = error;
+  try {
+    err = (err as Error).message;
+  } catch { /* cannot convert error object to [Error] type */ }
+
   $q.notify({
     color: 'negative',
-    message: `${drop.label} | ${error as Error}`,
+    message: `${drop.label} | ${err}`,
   });
 }
 
@@ -92,9 +100,9 @@ function handleError(_id: number, error: unknown): void {
 /*-- Component Lifecycle --*/
 
 onMounted(() => {
-  audio.on('loaderror', handleError);
-  audio.on('playerror', handleError);
-  audio.on('end', resetAudio);
+  audio.on('end', resetAudio as HowlCallback);
+  audio.on('loaderror', handleError as HowlErrorCallback);
+  audio.on('playerror', handleError as HowlErrorCallback);
   audio.on('play', () => {
     set(playing, true);
   });
@@ -119,6 +127,10 @@ onUnmounted(() => {
   &.drop-list__item--playing {
     border-color: var(--q-primary) !important;
     background: var(--q-transparent-primary) !important;
+  }
+
+  & .drop-list__item-text {
+    white-space: pre-line;
   }
 }
 </style>

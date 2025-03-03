@@ -233,7 +233,7 @@ export default [
    * [Extension] ESLint Stylistic's set of rules (recommended config)
    * https://eslint.style/guide/config-presets#static-configurations
    */
-  stylistic.configs['recommended-flat'],
+  stylistic.configs['recommended'],
 
   /**
    * https://eslint.vuejs.org
@@ -264,7 +264,6 @@ export default [
       },
     },
 
-    // add your custom rules here
     rules: {
       'prefer-promise-reject-errors': 'off',
 
