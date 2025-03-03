@@ -96,6 +96,8 @@ onMounted(() => {
       gap: 0.5rem;
 
       & .q-toolbar__title {
+        font-family: 'Blackout Midnight', 'Inter', system-ui, Roboto, sans-serif;
+        font-size: 1.75rem;
         padding: 0;
       }
     }

@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "@dotenvx/dotenvx": "^1.38.3",
+    "@fontsource/blackout-midnight": "^5.2.5",
     "@fontsource/inter": "^5.2.5",
     "@quasar/extras": "^1.16.17",
     "@vueuse/core": "^12.7.0",

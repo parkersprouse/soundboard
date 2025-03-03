@@ -11,6 +11,9 @@ importers:
       '@dotenvx/dotenvx':
         specifier: ^1.38.3
         version: 1.38.3
+      '@fontsource/blackout-midnight':
+        specifier: ^5.2.5
+        version: 5.2.5
       '@fontsource/inter':
         specifier: ^5.2.5
         version: 5.2.5
@@ -352,6 +355,9 @@ packages:
   '@eslint/plugin-kit@0.2.7':
     resolution: {integrity: sha512-JubJ5B2pJ4k4yGxaNLdbjrnk9d/iDz6/q8wOilpIowd6PJPgaxCuHBnBszq7Ce2TyMrywm5r4PnKm6V3iiZF+g==, tarball: https://registry.npmjs.org/@eslint/plugin-kit/-/plugin-kit-0.2.7.tgz}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@fontsource/blackout-midnight@5.2.5':
+    resolution: {integrity: sha512-8ruwKbU0Dx/slvAJy8FU/sSAkQwcNJ03lFXx68tG6gUZiO5qcTMyJErm6o/YMieqAAEijF7CWmaOopvaqLBEyg==, tarball: https://registry.npmjs.org/@fontsource/blackout-midnight/-/blackout-midnight-5.2.5.tgz}
 
   '@fontsource/inter@5.2.5':
     resolution: {integrity: sha512-kbsPKj0S4p44JdYRFiW78Td8Ge2sBVxi/PIBwmih+RpSXUdvS9nbs1HIiuUSPtRMi14CqLEZ/fbk7dj7vni1Sg==, tarball: https://registry.npmjs.org/@fontsource/inter/-/inter-5.2.5.tgz}
@@ -4263,6 +4269,8 @@ snapshots:
     dependencies:
       '@eslint/core': 0.12.0
       levn: 0.4.1
+
+  '@fontsource/blackout-midnight@5.2.5': {}
 
   '@fontsource/inter@5.2.5': {}
 

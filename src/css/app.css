@@ -3,6 +3,7 @@
  */
 
 @import url('@fontsource/inter');
+@import url('@fontsource/blackout-midnight');
 @import url('./_reset.css');
 
 :root {
@@ -25,7 +26,7 @@
 html,
 body,
 body.body--dark {
-  font-family: 'Inter', Roboto, sans-serif;
+  font-family: 'Inter', system-ui, Roboto, sans-serif;
   color: var(--color-light);
 }
 
