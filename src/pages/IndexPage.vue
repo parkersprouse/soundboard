@@ -52,6 +52,8 @@ import succulent_1 from 'assets/drops/succulent.webm';
 import succulent_2 from 'assets/drops/succulent.mp3';
 import suey_1 from 'assets/drops/suey.webm';
 import suey_2 from 'assets/drops/suey.mp3';
+import the_way_1 from 'assets/drops/the_way.webm';
+import the_way_2 from 'assets/drops/the_way.mp3';
 import we_meet_again_1 from 'assets/drops/we_meet_again.webm';
 import we_meet_again_2 from 'assets/drops/we_meet_again.mp3';
 
@@ -137,6 +139,11 @@ const drops: Drop[] = [
     label: 'Slop it up for me, daddy',
   },
   {
+    files: [the_way_1, the_way_2],
+    id: uid(),
+    label: 'Do you know the way?',
+  },
+  {
     files: [succulent_1, succulent_2],
     id: uid(),
     label: 'What is the charge?!',
@@ -151,7 +158,8 @@ const drops: Drop[] = [
     id: uid(),
     label: 'We meet again!',
   },
-].sort((a, b) => a.label.toLocaleLowerCase().localeCompare(b.label.toLocaleLowerCase()));
+].sort((a, b) => a.label.replace(/\W+/, '').toLocaleLowerCase()
+  .localeCompare(b.label.replace(/\W+/, '').toLocaleLowerCase()));
 </script>
 
 <style>
