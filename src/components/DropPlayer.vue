@@ -24,7 +24,7 @@ import { mdiPlayCircleOutline, mdiStopCircleOutline } from '@quasar/extras/mdi-v
 import { get, set } from '@vueuse/core';
 import { Howl } from 'howler';
 import { useQuasar } from 'quasar';
-import { inject, onMounted, onUnmounted, ref } from 'vue';
+import { inject, onBeforeMount, onUnmounted, ref } from 'vue';
 
 import type { HowlCallback, HowlErrorCallback } from 'howler';
 import type { Drop } from 'types/drop.js';
@@ -46,17 +46,7 @@ const $q = useQuasar();
 
 /*-- Data --*/
 
-const audio = new Howl({
-  autoplay: false,
-  html5: false,
-  loop: false,
-  mute: false,
-  pool: drop.files.length,
-  preload: true,
-  rate: 1,
-  src: [...drop.files],
-  volume: 1,
-});
+let audio: Howl;
 
 const playing = ref<boolean>(false);
 
@@ -66,8 +56,12 @@ const playing = ref<boolean>(false);
 function onClick(): void {
   if (get(playing)) resetAudio();
   else {
-    audio.play();
-    $bus.emit('drop_started', drop.id);
+    const play = () => {
+      audio.play();
+      $bus.emit('drop_started', drop.id);
+    };
+    if (!audio) loadAudioFiles().then(play);
+    else play();
   }
 }
 
@@ -78,7 +72,7 @@ function onDropStarted(id: string): void {
 }
 
 function resetAudio(): void {
-  audio.stop();
+  audio?.stop();
   set(playing, false);
 }
 
@@ -88,7 +82,7 @@ function handleError(_id: number, error: unknown): void {
   let err = error;
   try {
     err = (err as Error).message;
-  } catch { /* cannot convert error object to [Error] type */ }
+  } catch { /* failed to convert error object to [Error] type */ }
 
   $q.notify({
     color: 'negative',
@@ -96,10 +90,23 @@ function handleError(_id: number, error: unknown): void {
   });
 }
 
+async function loadAudioFiles() {
+  const loaded_filenames: string[] = (await Promise.all([
+    import(`../assets/drops/${drop.filename}.webm`),
+    import(`../assets/drops/${drop.filename}.mp3`),
+  ])).map((mod) => mod.default);
 
-/*-- Component Lifecycle --*/
+  audio = new Howl({
+    autoplay: false,
+    html5: false,
+    loop: false,
+    mute: false,
+    preload: false,
+    rate: 1,
+    src: [...loaded_filenames.sort((name) => name.endsWith('.webp') ? 1 : -1)],
+    volume: 1,
+  });
 
-onMounted(() => {
   audio.on('end', resetAudio as HowlCallback);
   audio.on('loaderror', handleError as HowlErrorCallback);
   audio.on('playerror', handleError as HowlErrorCallback);
@@ -107,12 +114,19 @@ onMounted(() => {
     set(playing, true);
   });
 
+  audio.load();
+}
+
+
+/*-- Component Lifecycle --*/
+
+onBeforeMount(async () => {
   $bus.on('drop_started', onDropStarted);
   $bus.on('stop_all_drops', resetAudio);
 });
 
 onUnmounted(() => {
-  audio.off();
+  audio?.off();
 
   $bus.off('drop_started', onDropStarted);
   $bus.off('stop_all_drops', resetAudio);

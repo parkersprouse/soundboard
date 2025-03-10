@@ -14,48 +14,7 @@
 </template>
 
 <script setup lang='ts'>
-import { uid } from 'quasar';
-
 import DropPlayer from 'src/components/DropPlayer.vue';
-
-import bullet_1 from 'assets/drops/bullet.webm';
-import bullet_2 from 'assets/drops/bullet.mp3';
-import chainsaw_1 from 'assets/drops/chainsaw.webm';
-import chainsaw_2 from 'assets/drops/chainsaw.mp3';
-import cock_in_mouth_1 from 'assets/drops/cock_in_mouth.webm';
-import cock_in_mouth_2 from 'assets/drops/cock_in_mouth.mp3';
-import cooler_1 from 'assets/drops/cooler.webm';
-import cooler_2 from 'assets/drops/cooler.mp3';
-import democracy_1 from 'assets/drops/democracy.webm';
-import democracy_2 from 'assets/drops/democracy.mp3';
-import ew_brother_1 from 'assets/drops/ew_brother.webm';
-import ew_brother_2 from 'assets/drops/ew_brother.mp3';
-import guillotine_1 from 'assets/drops/guillotine.webm';
-import guillotine_2 from 'assets/drops/guillotine.mp3';
-import handy_1 from 'assets/drops/handy.webm';
-import handy_2 from 'assets/drops/handy.mp3';
-import its_a_bible_1 from 'assets/drops/its_a_bible.webm';
-import its_a_bible_2 from 'assets/drops/its_a_bible.mp3';
-import judo_1 from 'assets/drops/judo.webm';
-import judo_2 from 'assets/drops/judo.mp3';
-import picture_of_house_1 from 'assets/drops/picture_of_house.webm';
-import picture_of_house_2 from 'assets/drops/picture_of_house.mp3';
-import poor_1 from 'assets/drops/poor.webm';
-import poor_2 from 'assets/drops/poor.mp3';
-import shhh_1 from 'assets/drops/shhh.webm';
-import shhh_2 from 'assets/drops/shhh.mp3';
-import slapaphone_1 from 'assets/drops/slapaphone.webm';
-import slapaphone_2 from 'assets/drops/slapaphone.mp3';
-import slop_daddy_1 from 'assets/drops/slop_daddy.webm';
-import slop_daddy_2 from 'assets/drops/slop_daddy.mp3';
-import succulent_1 from 'assets/drops/succulent.webm';
-import succulent_2 from 'assets/drops/succulent.mp3';
-import suey_1 from 'assets/drops/suey.webm';
-import suey_2 from 'assets/drops/suey.mp3';
-import the_way_1 from 'assets/drops/the_way.webm';
-import the_way_2 from 'assets/drops/the_way.mp3';
-import we_meet_again_1 from 'assets/drops/we_meet_again.webm';
-import we_meet_again_2 from 'assets/drops/we_meet_again.mp3';
 
 import type { Drop } from 'types/drop.d.ts';
 
@@ -64,98 +23,98 @@ import type { Drop } from 'types/drop.d.ts';
 
 const drops: Drop[] = [
   {
-    files: [bullet_1, bullet_2],
-    id: uid(),
+    filename: 'bullet',
+    id: 'c7d9686b-0968-454d-ba69-ae5721224139',
     label: 'Put a fucking bullet through my FUCKING SKULL',
   },
   {
-    files: [chainsaw_1, chainsaw_2],
-    id: uid(),
+    filename: 'chainsaw',
+    id: '212035cd-b204-4acf-8727-f289f09e1f7b',
     label: 'CHAINSAW!',
   },
   {
-    files: [cock_in_mouth_1, cock_in_mouth_2],
-    id: uid(),
+    filename: 'cock_in_mouth',
+    id: '60d05103-d693-4d11-a982-9177f584f2b9',
     label: "I can't wait to have your cock in my mouth",
   },
   {
-    files: [cooler_1, cooler_2],
-    id: uid(),
+    filename: 'cooler',
+    id: '10d2324e-7726-4977-9251-0ffde400f758',
     label: "It'd be a lot cooler if you did",
   },
   {
-    files: [democracy_1, democracy_2],
-    id: uid(),
+    filename: 'democracy',
+    id: '12378595-cf3b-47cc-ab27-726b1733522b',
     label: 'This. Is. Democracy. Manifest.',
   },
   {
-    files: [ew_brother_1, ew_brother_2],
-    id: uid(),
+    filename: 'ew_brother',
+    id: 'ce4d38d9-ac71-4221-9824-0022266f4fa6',
     label: "Brother, ew. What's that?",
   },
   {
-    files: [guillotine_1, guillotine_2],
-    id: uid(),
+    filename: 'guillotine',
+    id: 'db812113-6983-44b2-9b33-b8f3447d491d',
     label: 'Make Guillotines Great Again',
   },
   {
-    files: [handy_1, handy_2],
-    id: uid(),
+    filename: 'handy',
+    id: '9e888396-c797-47a4-b811-470786697430',
     label: 'Get your hand off my penis!',
   },
   {
-    files: [its_a_bible_1, its_a_bible_2],
-    id: uid(),
+    filename: 'its_a_bible',
+    id: 'd559db4e-c6da-48a2-90aa-991ce12467ed',
     label: "- Is that your bible?\n- It's a bible",
   },
   {
-    files: [judo_1, judo_2],
-    id: uid(),
+    filename: 'judo',
+    id: 'c4b765c9-10d8-4a6d-a813-b1d0d8181afd',
     label: 'I see that you know your Judo well',
   },
   {
-    files: [picture_of_house_1, picture_of_house_2],
-    id: uid(),
+    filename: 'picture_of_house',
+    id: '48091805-a8f8-42cc-a2d6-261b31208a61',
     label: 'Why do you send me a picture of my house?',
   },
   {
-    files: [poor_1, poor_2],
-    id: uid(),
+    filename: 'poor',
+    id: 'bd9caa8a-d2d4-4e6b-ac4d-dc23f665d54d',
     label: "You're fucking poor!",
   },
   {
-    files: [shhh_1, shhh_2],
-    id: uid(),
+    filename: 'shhh',
+    id: '7fb38a78-3101-42c1-b479-4c9e029e87d5',
     label: 'Shh, be quiet!',
   },
   {
-    files: [slapaphone_1, slapaphone_2],
-    id: uid(),
+    filename: 'slapaphone',
+    id: '62a36d56-27fb-47b5-ad46-28d71c48b892',
     label: 'Slapaphone!',
   },
   {
-    files: [slop_daddy_1, slop_daddy_2],
-    id: uid(),
+    filename: 'slop_daddy',
+    id: 'b74d34d0-75ce-4aa8-b3fe-5557552e7715',
     label: 'Slop it up for me, daddy',
   },
   {
-    files: [the_way_1, the_way_2],
-    id: uid(),
+    filename: 'the_way',
+    id: '55c65d51-2a57-4772-9e3f-409c2c0f3628',
     label: 'Do you know the way?',
   },
   {
-    files: [succulent_1, succulent_2],
-    id: uid(),
+    filename: 'succulent',
+    id: '0d811a76-e370-4c5b-bbe3-51bf1285d7b2',
     label: 'What is the charge?!',
   },
   {
-    files: [suey_1, suey_2],
-    id: uid(),
+    filename: 'suey',
+    id: 'f17e798f-c972-4af2-b8b5-e5af2fc80480',
     label: 'Thought about killing myself',
   },
   {
-    files: [we_meet_again_1, we_meet_again_2],
-    id: uid(),
+    filename: 'we_meet_again',
+    id: '849fcd18-d698-491e-8568-3f2e50cea6a5',
     label: 'We meet again!',
   },
 ].sort((a, b) => a.label.replace(/\W+/, '').toLocaleLowerCase()

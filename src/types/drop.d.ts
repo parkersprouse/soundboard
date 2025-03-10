@@ -1,5 +1,5 @@
 export interface Drop {
-  files: string[];
+  filename: string;
   id: string;
   label: string;
 }
