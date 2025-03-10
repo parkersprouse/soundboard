@@ -73,6 +73,11 @@ const drops: Drop[] = [
     label: 'I see that you know your Judo well',
   },
   {
+    filename: 'donuts',
+    id: '9ce57d39-719c-411e-b42f-a011c55e4db0',
+    label: 'Krispy Kreme Donuts',
+  },
+  {
     filename: 'picture_of_house',
     id: '48091805-a8f8-42cc-a2d6-261b31208a61',
     label: 'Why do you send me a picture of my house?',
@@ -117,8 +122,14 @@ const drops: Drop[] = [
     id: '849fcd18-d698-491e-8568-3f2e50cea6a5',
     label: 'We meet again!',
   },
-].sort((a, b) => a.label.replace(/\W+/, '').toLocaleLowerCase()
-  .localeCompare(b.label.replace(/\W+/, '').toLocaleLowerCase()));
+].sort((a, b) => clean(a.label).localeCompare(clean(b.label)));
+
+
+/*-- Methods --*/
+
+function clean(str: string): string {
+  return str.replace(/\W+/, '').toLocaleLowerCase();
+}
 </script>
 
 <style>
