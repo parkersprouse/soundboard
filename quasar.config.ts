@@ -8,6 +8,7 @@ export default defineConfig((/* ctx */) => {
   return {
     boot: [
       'app_meta',
+      'drops',
       'event_bus',
     ],
 
