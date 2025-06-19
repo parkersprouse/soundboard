@@ -1,7 +1,7 @@
 <template>
   <q-page class='column items-center justify-start q-pa-md'>
     <q-list
-      class='column items-stretch justify-stretch drop-list'
+      class='column items-stretch justify-start drop-list'
       dark
     >
       <DropPlayer

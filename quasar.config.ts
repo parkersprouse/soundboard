@@ -10,6 +10,7 @@ export default defineConfig((/* ctx */) => {
       'app_meta',
       'drops',
       'event_bus',
+      'safe_area',
     ],
 
     build: {

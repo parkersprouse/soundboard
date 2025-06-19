@@ -1,8 +1,11 @@
 <template>
-  <q-layout view='hHh lpR fFf'>
+  <q-layout
+    id='app-layout'
+    view='hHh lpr fFf'
+  >
     <q-header
       id='app-header'
-      class='bg-dark text-light'
+      class='bg-dark text-muted'
     >
       <q-toolbar class='text-center'>
         <q-toolbar-title v-if='$APP_TAGLINE'>
@@ -11,9 +14,14 @@
       </q-toolbar>
     </q-header>
 
-    <q-page-container>
+    <q-page-container id='app-content'>
       <router-view />
     </q-page-container>
+
+    <q-footer
+      id='app-footer'
+      class='bg-dark-page text-light'
+    />
   </q-layout>
 
   <q-dialog
@@ -86,21 +94,37 @@ onMounted(() => {
 </script>
 
 <style>
-#app-header {
-  &.q-header {
+#app-layout {
+  & #app-header {
+    padding: 0;
+    padding-top: var(--safe-area-inset-top);
+
     border-color: rgba(255, 255, 255, 0.1);
     border-style: solid;
-    border-width: 1px 0;
+    border-width: 0;
+    border-bottom-width: 1px;
 
-    & .q-toolbar {
-      gap: 0.5rem;
+    &.q-header {
+      & .q-toolbar {
+        gap: 0.5rem;
 
-      & .q-toolbar__title {
-        font-family: 'Blackout Midnight', 'Inter', system-ui, Roboto, sans-serif;
-        font-size: 1.75rem;
-        padding: 0;
+        & .q-toolbar__title {
+          font-family: 'Blackout Midnight', 'Inter', system-ui, 'Roboto', sans-serif;
+          font-size: 1.75rem;
+          padding: 0;
+        }
       }
     }
+  }
+
+  & #app-footer {
+    padding: 0;
+    padding-bottom: var(--safe-area-inset-bottom);
+
+    border-color: rgba(255, 255, 255, 0.1);
+    border-style: solid;
+    border-width: 0;
+    border-top-width: 1px;
   }
 }
 </style>

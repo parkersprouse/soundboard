@@ -41,14 +41,19 @@ export default defineBoot(({ app }) => {
       label: 'This. Is. Democracy. Manifest.',
     },
     {
-      filename: 'ew_brother',
-      id: 'ce4d38d9-ac71-4221-9824-0022266f4fa6',
-      label: "Brother, ew. What's that?",
+      filename: 'donuts',
+      id: '9ce57d39-719c-411e-b42f-a011c55e4db0',
+      label: 'Krispy Kreme Donuts',
     },
     {
       filename: 'everythings_computer',
       id: 'b437857b-1261-494d-bbc9-7fa7a7f69cb9',
       label: "Everything's Computer",
+    },
+    {
+      filename: 'ew_brother',
+      id: 'ce4d38d9-ac71-4221-9824-0022266f4fa6',
+      label: "Brother, ew. What's that?",
     },
     {
       filename: 'guillotine',
@@ -61,9 +66,14 @@ export default defineBoot(({ app }) => {
       label: 'Get your hand off my penis!',
     },
     {
-      filename: 'neil_breen_suicide',
-      id: '79e1ad0b-55c4-4b74-a141-f319a9f3742d',
-      label: "I can't believe you committed suicide :(",
+      filename: 'how_dare_you',
+      id: '90e7d441-a1a7-4e2b-9cc3-d715581f3e09',
+      label: 'First of all, how dare you?',
+    },
+    {
+      filename: 'i_am_snarky',
+      id: '3c019eb9-d57e-4873-a80e-ce66a0f93ccd',
+      label: "I know, you're right, that is a problem I have.",
     },
     {
       filename: 'i_love_tesler',
@@ -81,9 +91,19 @@ export default defineBoot(({ app }) => {
       label: 'I see that you know your Judo well',
     },
     {
-      filename: 'donuts',
-      id: '9ce57d39-719c-411e-b42f-a011c55e4db0',
-      label: 'Krispy Kreme Donuts',
+      filename: 'neil_breen_eughh',
+      id: 'c92c290b-e627-45c2-a14e-a2256fefb92e',
+      label: 'Who am I? What am I? Eughh!',
+    },
+    {
+      filename: 'neil_breen_suicide',
+      id: '79e1ad0b-55c4-4b74-a141-f319a9f3742d',
+      label: "I can't believe you committed suicide :(",
+    },
+    {
+      filename: 'not_true_and_false',
+      id: '6e35f367-3245-40bd-8471-496b25deb396',
+      label: 'That is not only not true, that is false.',
     },
     {
       filename: 'picture_of_house',
@@ -111,11 +131,6 @@ export default defineBoot(({ app }) => {
       label: 'Slop it up for me, daddy',
     },
     {
-      filename: 'the_way',
-      id: '55c65d51-2a57-4772-9e3f-409c2c0f3628',
-      label: 'Do you know the way?',
-    },
-    {
       filename: 'succulent',
       id: '0d811a76-e370-4c5b-bbe3-51bf1285d7b2',
       label: 'What is the charge?!',
@@ -126,14 +141,14 @@ export default defineBoot(({ app }) => {
       label: 'Thought about killing myself',
     },
     {
+      filename: 'the_way',
+      id: '55c65d51-2a57-4772-9e3f-409c2c0f3628',
+      label: 'Do you know the way?',
+    },
+    {
       filename: 'we_meet_again',
       id: '849fcd18-d698-491e-8568-3f2e50cea6a5',
       label: 'We meet again!',
-    },
-    {
-      filename: 'neil_breen_eughh',
-      id: 'c92c290b-e627-45c2-a14e-a2256fefb92e',
-      label: 'Who am I? What am I? Eughh!',
     },
   ].sort((a, b) => clean(a.label).localeCompare(clean(b.label), undefined, {
     ignorePunctuation: true,
