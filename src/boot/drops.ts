@@ -16,6 +16,11 @@ function clean(str: string): string {
 export default defineBoot(({ app }) => {
   const drops: Drop[] = [
     {
+      filename: 'breaking_news',
+      id: 'd1eef21a-c4f2-42ff-8972-b4ac9033a55c',
+      label: "You're breaking news, here",
+    },
+    {
       filename: 'bullet',
       id: 'c7d9686b-0968-454d-ba69-ae5721224139',
       label: 'Put a fucking bullet through my FUCKING SKULL',
