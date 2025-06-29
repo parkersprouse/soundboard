@@ -1,6 +1,6 @@
 <template>
   <q-item
-    class='bg-dark drop-list__item'
+    class='bg-dark drop-list__item full-width'
     :class='{ "drop-list__item--playing": playing }'
     clickable
     @click='onClick'
@@ -138,6 +138,12 @@ onUnmounted(() => {
   border: 1px solid #ffffff47;
   border-radius: 4px;
 
+  @media screen and (hover: hover) {
+    &:hover {
+      background: var(--q-transparent-primary) !important;
+    }
+  }
+
   &.drop-list__item--playing {
     border-color: var(--q-primary) !important;
     background: var(--q-transparent-primary) !important;
@@ -145,6 +151,11 @@ onUnmounted(() => {
 
   & .drop-list__item-text {
     white-space: pre-line;
+  }
+
+  & .q-focus-helper {
+    display: none !important;
+    opacity: 0 !important;
   }
 }
 </style>

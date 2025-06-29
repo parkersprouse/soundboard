@@ -83,7 +83,8 @@ export default defineConfig((/* ctx */) => {
     framework: {
       config: {
         brand: {
-          primary: '#7b4c9e',
+          // primary: '#7b4c9e',
+          primary: '#89dceb',
           secondary: '#272a2d',
           accent: '#0078a7',
 
@@ -98,7 +99,7 @@ export default defineConfig((/* ctx */) => {
           light: '#edeef0',
           muted: '#b0b4ba',
 
-          'transparent-primary': '#7b4c9e22',
+          'transparent-primary': '#89dceb22',
         },
         capacitor: {
           // let Quasar exit the app on mobile back button trigger
