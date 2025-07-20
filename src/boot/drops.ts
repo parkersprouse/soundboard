@@ -116,9 +116,19 @@ export default defineBoot(({ app }) => {
       label: 'Why do you send me a picture of my house?',
     },
     {
+      filename: 'poopy_party',
+      id: 'ec1e5e76-9c6d-4e8d-917a-8ca3116d3f93',
+      label: 'The Party is Poopy',
+    },
+    {
       filename: 'poor',
       id: 'bd9caa8a-d2d4-4e6b-ac4d-dc23f665d54d',
       label: "You're fucking poor!",
+    },
+    {
+      filename: 'reee',
+      id: '714ec793-9d3d-4256-b342-9c48716e026c',
+      label: 'Reeee',
     },
     {
       filename: 'shhh',

@@ -15,7 +15,7 @@
     </q-input>
 
     <q-list
-      class='full-width column items-stretch justify-start drop-list'
+      class='fit column items-stretch justify-start drop-list'
       dark
     >
       <DropPlayer
@@ -24,12 +24,28 @@
         :drop='drop'
       />
     </q-list>
+    <q-page-scroller
+      position='bottom-right'
+      :scroll-offset='150'
+      :offset='[18, 18]'
+    >
+      <q-btn
+        class='row align-center justify-center'
+        color='accent'
+        fab
+      >
+        <q-icon
+          :name='mdiChevronUp'
+          class='text-white'
+        />
+      </q-btn>
+    </q-page-scroller>
   </q-page>
 </template>
 
 <script setup lang='ts'>
 import { inject, ref, watch } from 'vue';
-import { mdiMagnify } from '@quasar/extras/mdi-v7';
+import { mdiMagnify, mdiChevronUp } from '@quasar/extras/mdi-v7';
 
 import DropPlayer from 'src/components/DropPlayer.vue';
 
@@ -62,5 +78,17 @@ watch(filter, (new_filter) => {
 <style>
 .drop-list {
   gap: 16px;
+}
+</style>
+
+<style scoped>
+.q-btn--rounded {
+  border-radius: 100px;
+  width: 56px;
+  height: 56px;
+}
+
+.q-btn .q-icon {
+  font-size: 2.5rem;
 }
 </style>
