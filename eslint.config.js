@@ -140,7 +140,7 @@ const stylistic_rules = {
     'error',
     'single',
     {
-      allowTemplateLiterals: true,
+      allowTemplateLiterals: 'always',
       avoidEscape: true,
     },
   ],
