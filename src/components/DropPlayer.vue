@@ -91,10 +91,18 @@ function handleError(_id: number, error: unknown): void {
 }
 
 async function loadAudioFiles() {
-  const loaded_filenames: string[] = (await Promise.all([
-    import(`../assets/drops/${drop.filename}.webm`),
-    import(`../assets/drops/${drop.filename}.mp3`),
-  ])).map((mod) => mod.default);
+  const loaded_filenames: string[] = [];
+
+  try {
+    const loaded_webm = await import(`../assets/drops/${drop.filename}.webm`);
+    loaded_filenames.push(loaded_webm.default);
+  } catch { /* */ }
+
+  try {
+    const loaded_mp3 = await import(`../assets/drops/${drop.filename}.mp3`);
+    loaded_filenames.push(loaded_mp3.default);
+  } catch { /* */ }
+
 
   audio = new Howl({
     autoplay: false,

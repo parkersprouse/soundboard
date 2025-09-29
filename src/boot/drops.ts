@@ -131,6 +131,11 @@ export default defineBoot(({ app }) => {
       label: 'Reeee',
     },
     {
+      filename: 'revolution',
+      id: '2d7d00e9-8e56-4754-b926-404d25e424ed',
+      label: 'La Révolution up in this bitch',
+    },
+    {
       filename: 'shhh',
       id: '7fb38a78-3101-42c1-b479-4c9e029e87d5',
       label: 'Shh, be quiet!',
