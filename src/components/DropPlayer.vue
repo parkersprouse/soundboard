@@ -79,30 +79,36 @@ function resetAudio(): void {
 function handleError(_id: number, error: unknown): void {
   resetAudio();
 
-  let err = error;
+  let err: Error = new Error('Unexpected error');
   try {
-    err = (err as Error).message;
-  } catch { /* failed to convert error object to [Error] type */ }
+    err = error as Error;
+  } catch (e: unknown) {
+    err = e as Error;
+  }
 
   $q.notify({
     color: 'negative',
-    message: `${drop.label} | ${err}`,
+    message: `${drop.label} | ${err.message || err.name}`,
+  });
+}
+
+function loadAudioFile(ext: string): Promise<string> {
+  return new Promise((resolve: (arg: string) => void): Promise<void> => {
+    return import(`../assets/drops/${drop.filename}.${ext}`)
+      .then((res) => resolve(res.default))
+      .catch(() => resolve(''));
   });
 }
 
 async function loadAudioFiles() {
-  const loaded_filenames: string[] = [];
+  const results: string[] = await Promise.all([
+    loadAudioFile('webm'),
+    loadAudioFile('mp3'),
+  ]);
 
-  try {
-    const loaded_webm = await import(`../assets/drops/${drop.filename}.webm`);
-    loaded_filenames.push(loaded_webm.default);
-  } catch { /* */ }
-
-  try {
-    const loaded_mp3 = await import(`../assets/drops/${drop.filename}.mp3`);
-    loaded_filenames.push(loaded_mp3.default);
-  } catch { /* */ }
-
+  const loaded_filenames: string[] = results
+    .filter((result) => Boolean(result))
+    .sort((name) => name.endsWith('.webp') ? 1 : -1);
 
   audio = new Howl({
     autoplay: false,
@@ -111,7 +117,7 @@ async function loadAudioFiles() {
     mute: false,
     preload: false,
     rate: 1,
-    src: [...loaded_filenames.sort((name) => name.endsWith('.webp') ? 1 : -1)],
+    src: loaded_filenames,
     volume: 1,
   });
 

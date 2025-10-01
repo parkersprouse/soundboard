@@ -5,6 +5,21 @@ import pluginQuasar from '@quasar/app-vite/eslint';
 import stylistic from '@stylistic/eslint-plugin';
 import vueTsEslintConfig from '@vue/eslint-config-typescript';
 
+const ts_eslint_rules = {
+  '@typescript-eslint/no-unused-vars': [
+    'error',
+    {
+      args: 'all',
+      argsIgnorePattern: '^_',
+      caughtErrors: 'all',
+      caughtErrorsIgnorePattern: '^_',
+      destructuredArrayIgnorePattern: '^_',
+      varsIgnorePattern: '^_',
+      ignoreRestSiblings: true,
+    },
+  ],
+};
+
 /**
  * ------------------------------------------------------------------------------
  * ESLint Stylistic rule customization
@@ -32,8 +47,8 @@ const stylistic_rules = {
       arrays: 'always-multiline',
       enums: 'always-multiline',
       exports: 'always-multiline',
-      functions: 'never',
-      generics: 'never',
+      functions: 'always-multiline',
+      generics: 'always-multiline',
       imports: 'always-multiline',
       objects: 'always-multiline',
       tuples: 'always-multiline',
@@ -56,7 +71,7 @@ const stylistic_rules = {
   ],
   '@stylistic/function-paren-newline': [
     'error',
-    'multiline',
+    'multiline-arguments',
   ],
   '@stylistic/indent': [
     'error',
@@ -221,6 +236,7 @@ const vue_rules = {
 export default [
   {
     ignores: [
+      'bin/**/*',
       'TEMPLATE.vue',
     ],
   },
@@ -270,6 +286,7 @@ export default [
       'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
       'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 
+      ...ts_eslint_rules,
       ...stylistic_rules,
       ...vue_rules,
     },

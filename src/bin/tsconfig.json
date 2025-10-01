@@ -1,0 +1,22 @@
+{
+  "include": [
+    "./**/*.ts"
+  ],
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "isolatedModules": false,
+    "lib": [
+      "esnext"
+    ],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "noEmit": false,
+    "outDir": "../../bin",
+    "pretty": true,
+    "strict": true,
+    "target": "esnext",
+    "types": [
+      "@types/node"
+    ]
+  }
+}

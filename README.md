@@ -3,7 +3,7 @@
 
 ## Prerequisites
 - [`pnpm`](https://pnpm.io) ^10
-- [`node`](https://nodejs.org) ^22
+- [`node`](https://nodejs.org) ^22.20
 - `SOUNDBOARD_KEYSTORE_PASS` environment variable to be set in order for the APK to be signed during build
 
 ## Install the dependencies
@@ -59,7 +59,7 @@ You're not required to use them yourself if you have an alternate way of providi
 
 - This will trim the `<input>` file from `<start timestamp>` (format `<hours>:<minutes>:<seconds>.<milliseconds>`)  
   for `<duration from start timestamp>` length of time (same format - ex. a duration of 3.5 seconds would be `00:00:03.5`),  
-  and save it as `<output>` (_**make sure to use the same file extension - likely `.webm`**_).
+  and save it as `<output>` (_**make sure to use the same file extension - e.g. `.webm`**_).
   ```shell
   ffmpeg -ss <start timestamp> -i <input> -to <duration from start timestamp> -b:a 120K <output>
   ```

@@ -1,4 +1,6 @@
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file
+import { join, resolve } from 'node:path';
+
 import { defineConfig } from '#q-app/wrappers';
 import { mdiClose } from '@quasar/extras/mdi-v7';
 
@@ -16,6 +18,12 @@ export default defineConfig((/* ctx */) => {
     build: {
       analyze: false, // Generates and opens an HTML report of the analyzed production bundle
       extendViteConf(config) {
+        const assets_glob = `${resolve(join(config.root || '.', 'src', 'assets'))}/**/*`;
+        if (Array.isArray(config.assetsInclude)) {
+          config.assetsInclude = [...config.assetsInclude, assets_glob];
+        } else {
+          config.assetsInclude = [assets_glob];
+        }
         config.build ??= {};
         config.css ??= {};
         config.build.cssMinify = 'lightningcss';
